@@ -1,0 +1,66 @@
+<!-- ----- Tool Bar -----
+<mat-toolbar color="warm mat-elevation-z8">
+  <img src="../assets/coranavirus.png" alt="corona virus" srcset="" />
+  <span class="menu-title">Corona Tracker</span> 
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">
+        menu
+    </mat-icon>
+    <mat-icon *ngIf="sidenav.opened">
+        close
+    </mat-icon>
+</button>
+  <h2 class="date">Date : {{ date.substring(0, 10) }}</h2>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+ ------ Containers ------- 
+<mat-sidenav-container>
+  <mat-sidenav #sideNav="matSideNav" opened class="mat-elevation-z8">
+    <app-side-nav></app-side-nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+
+<mat-toolbar class="mat-elevation-z8">
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      
+       <mat-icon *ngIf="!sidenav.opened">
+          menu
+      </mat-icon>
+      <mat-icon *ngIf="sidenav.opened">
+          close
+      </mat-icon> 
+  </button>
+  Corona Tracker
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+    
+    <h4 class="name">DashBoard</h4>
+    
+    <mat-divider></mat-divider>
+    
+    <button mat-button routerLink="/" class="menu-button">
+      <mat-icon>public</mat-icon>
+      <span>Global Reports</span>
+    </button>
+    <button mat-button routerLink="/country-report" class="menu-button">
+      <mat-icon>flag</mat-icon>
+      <span>Country Reports</span>
+    </button>
+        
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <div class="row">
+        <h2 class="date col" fxFlex fxLayoutAlign="flex-end">Date : {{ date.substring(0, 10) }}</h2><br>
+        </div>
+        <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

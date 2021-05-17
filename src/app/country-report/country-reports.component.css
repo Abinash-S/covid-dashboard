@@ -1,0 +1,16 @@
+
+.title{
+  margin-left: 40%;
+}
+.col{
+  margin-top:1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 750px) {
+  .title{
+
+    margin-left: 30%;
+  }
+}

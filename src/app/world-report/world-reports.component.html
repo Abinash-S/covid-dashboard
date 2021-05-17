@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        <h2 class="heading d-flex justify-content-center">GLOBAL REPORTS</h2>
+    </div>
+    <div class="row">
+        <mat-card class="col">
+            <div class="card align-items-center">
+                <mat-card-title class="card-title"> Global Data </mat-card-title>
+                <mat-card-content> New Confirmed : {{dataSource.Global.NewConfirmed}}</mat-card-content>
+                <mat-card-content> Total Confirmed : {{dataSource.Global.TotalConfirmed}}</mat-card-content>
+                <mat-card-content> New Deaths : {{dataSource.Global.NewDeaths}}</mat-card-content>
+                <mat-card-content> Total Deaths : {{dataSource.Global.TotalDeaths}}</mat-card-content>
+                <mat-card-content> New Recovered : {{dataSource.Global.NewRecovered}}</mat-card-content>
+                <mat-card-content> Total Recovered : {{dataSource.Global.TotalRecovered}}</mat-card-content>
+            </div>
+        </mat-card>
+        <mat-card class="col">
+        <div class="div-chart">
+            <div class="card align-items-center">
+                <mat-card-title class="card-title"> Global Chart </mat-card-title>
+                <canvas id="my-chart"></canvas>
+            </div>
+        </div>
+        </mat-card>
+    </div>
+    <div class="row">
+        
+    </div>
+    <div class="w-100"></div>
+    <div class="row">
+        <table mat-table [dataSource]="Countries" matSort class="mat-elevation-z8 col">
+
+            <ng-container matColumnDef="Country">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Country</th>
+                <td mat-cell *matCellDef="let element"> {{element.Country}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="CountryCode">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Country Code </th>
+                <td mat-cell *matCellDef="let element"> {{element.CountryCode}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="NewConfirmed">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> New Confirmed </th>
+                <td mat-cell *matCellDef="let element"> {{element.NewConfirmed}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="TotalConfirmed">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Confirmed </th>
+                <td mat-cell *matCellDef="let element"> {{element.TotalConfirmed}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="NewRecovered">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> New Recovered </th>
+                <td mat-cell *matCellDef="let element"> {{element.NewRecovered}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="TotalRecovered">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> TotalRecovered </th>
+                <td mat-cell *matCellDef="let element"> {{element.TotalRecovered}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="NewDeaths">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> New Deaths </th>
+                <td mat-cell *matCellDef="let element"> {{element.NewDeaths}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="TotalDeaths">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> TotalDeaths </th>
+                <td mat-cell *matCellDef="let element"> {{element.TotalDeaths}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>
