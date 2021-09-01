@@ -18,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     FormsModule,
     MatSortModule,
-    AgGridModule
+    AgGridModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true,      registrationStrategy: 'registerWhenStable:30000'
+  })
   ],
   providers: [],
   bootstrap: [AppComponent],
