@@ -18,7 +18,7 @@ export class AppComponent {
   title = 'CoronaTracker';
   dataSource: any;
   date: string = '';
-  private readonly publicKey = 'BILnDBE7efflqnT34-iIEpho3mSU43z2luwUMJRlXi0qU81vdhTph3DO-bQU0RjZ8vZiQ5W-CT_V5n3Bq_ommqs';
+  private readonly publicKey = 'BAhoCCYSzXe2eQUAmW5x_BoujdatUYR6cSSQkIMwG-RqooHCfXeTDSI8b6WsHFt0dlst_Ip2kDVZpvRpItQTEO8';
 
   constructor(private corona: CoronaService,private observer: BreakpointObserver,private swPush: SwPush,private update: SwUpdate,
     private appRef: ApplicationRef,) {
